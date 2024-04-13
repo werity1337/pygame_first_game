@@ -5,4 +5,7 @@ class Parameters:
         self.screen_width = 800
         self.screen_height = 800
         self.fps = 60
+
         self.icon = pygame.image.load("images/icon/pistol_icon.png")
+        self.bullet_image = pygame.image.load("images/in_game_images/player/bullet.png")
+        self.button_start = pygame.image.load("images/in_menu_images/start_button.png")

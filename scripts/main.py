@@ -6,7 +6,7 @@ class Game:
     def __init__(self):
         pygame.init()
         self.parameters = Parameters()
-        self.screen = pygame.display.set_mode(self.parameters.screen_width, self.parameters.screen_height)
+        self.screen = pygame.display.set_mode((self.parameters.screen_width, self.parameters.screen_height))
         pygame.display.set_caption("Zombie Shooter")
         pygame.display.set_icon(self.parameters.icon)
         self.game_start = False
@@ -16,6 +16,19 @@ class Game:
 
     def run_game(self):
         clock = pygame.time.Clock()
+        running = True
+        while running:
+            clock.tick(self.parameters.fps)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+            pygame.display.update()
+        pygame.quit()
+
+    def _check_game_events(self):
+        pass
+
+    def show_main_scene(self):
         pass
 
 
