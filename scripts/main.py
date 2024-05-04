@@ -26,11 +26,19 @@ class Game:
         pygame.quit()
 
     def _check_game_events(self):
-        pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        keys = pygame.key.get_pressed()
 
-    def show_main_scene(self):
-        pass
+    def _check_menu_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
+    def update_menu_screen(self):
+        self.screen.blit(self.parameters.menu_background, (0, 0))
+        pygame.display.update()
 
 
 
